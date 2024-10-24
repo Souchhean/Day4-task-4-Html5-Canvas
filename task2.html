@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Canvas Drawing</h1>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        
+        ctx.fillStyle = '#f4b400'; 
+        ctx.fillRect(50, 50, 300, 150); 
+
+
+        ctx.beginPath();
+        ctx.arc(200, 250, 80, 0, Math.PI * 2, false);  
+        ctx.fillStyle = '#0f9d58';  
+        ctx.fill();
+        ctx.closePath();
+
+       
+        ctx.beginPath();
+        ctx.moveTo(50, 350); 
+        ctx.lineTo(350, 350);  
+        ctx.strokeStyle = '#4285f4'; 
+        ctx.lineWidth = 5;  
+        ctx.stroke();
+        ctx.closePath();
+
+        
+        ctx.font = '24px Arial';
+        ctx.fillStyle = '#db4437'; 
+        ctx.fillText('Hello Canvas!', 120, 380);  
+    </script>
+
+</body>
+</html>
